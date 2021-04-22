@@ -1,0 +1,48 @@
+<%- include("../partials/header"); %>
+<div class="row">
+  <% if(!noticia._id){%>
+  <p class="text-center text-uppercase mx-auto my-5 bg-primary p-2 text-white">
+    Esta noticia no existe
+  </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="/" class="btn btn-info btn-block"> Volver</a>
+      </div>
+    </div>
+  </div>
+  <% } %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 my-5">
+        <div class="card mb-3">
+          <img
+            class="card-img-top img-fluid"
+            src="/upload/<%= noticia.imagen %>"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Titulo: <%= noticia.titulo %></h5>
+            <p class="card-text">
+              <span>Subtitulo: <%=noticia.subtitulo%> </span>
+            </p>
+            <p class="card-text">Descripción: <%=noticia.descripcion%></p>
+            <p class="card-text">
+              <small class="text-muted">fecha: <%= noticia.fecha%></small>
+            </p>
+            <small class="text-muted">Autor: <%= noticia.autor.nombre%></small>
+            <small class="text-muted">Categoria: <%= noticia.categoria%></small>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 mx-auto">
+                <a href="/" class="btn btn-success btn-block my-2">Volver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

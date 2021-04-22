@@ -1,0 +1,50 @@
+<%- include("../partials/header"); %>
+<h2 class="text-center my-4 text-capitalize">Añade Autores</h2>
+    <div class="container mb-5">
+        <div class="row mx-auto">
+            <div class="col-md-8 mx-auto">
+                <div class="card card-body">
+                  <% if(typeof mensaje !== "undefined")  {%>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <p class="text-center "><%= mensaje %></p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                <% }%>
+                  <% if(typeof error !== "undefined")  {%>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <p class="text-center "><%= error %></p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                <% }%>
+                    <form action="/crear-autor" method="post">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="nombre">Nombre del Autor:</label>
+                            <input required name="nombre"  type="text" class="form-control" id="nombre" placeholder="Escribe el nombre del autor">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="pais">Pais del autor:</label>
+                            <input required name="pais"  type="text" class="form-control" id="pais" placeholder="Pais del autor">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="edad">Edad del Autor:</label>
+                            <input required name="edad" type="number" class="form-control" id="edad" placeholder="Edad del autor">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="genero">Genero del autor:</label>
+                            <input required name="genero"  type="text" class="form-control" id="genero" placeholder="Genero del autor">
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-2">Agregar Autor </button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
